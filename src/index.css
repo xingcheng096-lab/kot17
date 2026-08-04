@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* KOT 17 Theme — Teal primary, Gold secondary, white background */
+    --background: 0 0% 100%;
+    --foreground: 173 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 173 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 173 47% 11%;
+
+    /* Primary: #0F766E (teal-700) */
+    --primary: 173 80% 26%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: #C9A227 (gold) */
+    --secondary: 45 71% 47%;
+    --secondary-foreground: 173 47% 11%;
+
+    --muted: 173 30% 96%;
+    --muted-foreground: 173 10% 40%;
+
+    --accent: 45 71% 95%;
+    --accent-foreground: 173 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 173 20% 90%;
+    --input: 173 20% 90%;
+    --ring: 173 80% 26%;
+
+    --chart-1: 173 80% 26%;
+    --chart-2: 45 71% 47%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 142 71% 35%;
+    --chart-5: 0 72% 51%;
+
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Noto Sans Khmer', system-ui, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+  }
+  .font-khmer {
+    font-family: 'Noto Sans Khmer', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.6);
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-area {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+}
